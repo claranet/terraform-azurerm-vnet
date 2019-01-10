@@ -5,7 +5,7 @@ output "virtual_network_id" {
 
 output "virtual_network_location" {
   description = "Virtual network location"
-  value       = "${azurerm_virtual_network.location}"
+  value       = "${azurerm_virtual_network.main_vnet.location}"
 }
 
 output "virtual_network_name" {
