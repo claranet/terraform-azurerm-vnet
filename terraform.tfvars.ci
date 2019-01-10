@@ -1,6 +1,10 @@
-location="France Central"
+location="fr-central"
+location_short="frc"
 client_name="test"
 environment="test"
 stack="ci"
-rg_name="test"
+resource_group_name="rg-test"
 vnet_cidr=["10.0.0.0/16"]
+extra_tags = {
+  foo = "bar"
+}
