@@ -1,0 +1,6 @@
+location="France Central"
+client_name="test"
+environment="test"
+stack="ci"
+rg_name="test"
+vnet_cidr=["10.0.0.0/16"]
