@@ -2,6 +2,30 @@
 
 Common Azure module to generate a virtual network.
 
+## Prerequisites
+
+* module.az-region.location-short: git::ssh://git@git.fr.clara.net/claranet/cloudnative/projects/cloud/azure/terraform/modules/regions.git?ref=xxx
+* module.rg.resource_group_name: git::ssh://git@git.fr.clara.net/claranet/cloudnative/projects/cloud/azure/terraform/modules/rg.git?ref=xxx
+
+
+## Mandatory Usage
+
+```shell
+module "azure-virtual-network" {
+    source              = "git::ssh://git@git.fr.clara.net/claranet/cloudnative/projects/cloud/azure/terraform/modules/vnet.git?ref=xxx"
+    
+    environment         = "${var.environment}"
+    location            = "${module.azure-region.location}"
+    location_short      = "${module.azure-region.location_short}"
+    client_name         = "${var.client_name}"
+    stack               = "${var.stack}"
+    custom_vnet_name    = "${var.custom_vnet_name}"
+
+    resource_group_name     = "${module.rg.resource_group_name}"
+    vnet_cidr               = ["${var.vnet_cidr}"]
+}
+```
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
