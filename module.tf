@@ -6,7 +6,7 @@ locals {
 }
 
 resource "azurerm_virtual_network" "main_vnet" {
-  name                = "${coalesce(var.custom_vnet_name, "vnet-${var.environment}-${var.location-short}-${var.client_name}-${var.stack}")}"
+  name                = "${coalesce(var.custom_vnet_name, "${var.client_name}-${var.location-short}-${var.environment}-vnet")}"
   resource_group_name = "${var.resource_group_name}"
   address_space       = ["${var.vnet_cidr}"]
   location            = "${var.location}"
