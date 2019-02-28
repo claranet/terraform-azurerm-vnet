@@ -12,3 +12,8 @@ output "virtual_network_name" {
   description = "Virtual network name"
   value       = "${azurerm_virtual_network.main_vnet.name}"
 }
+
+output "virtual_network_space" {
+  description = "Virtual network space"
+  value       = "${azurerm_virtual_network.main_vnet.address_space}"
+}

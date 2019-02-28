@@ -39,6 +39,12 @@ variable "vnet_cidr" {
   type        = "list"
 }
 
+variable "dns_servers" {
+  description = "List of IP addresses of DNS servers"
+  type        = "list"
+  default     = []
+}
+
 variable "extra_tags" {
   description = "Extra tags to add"
   type        = "map"

@@ -38,6 +38,7 @@ module "azure-virtual-network" {
 
     resource_group_name     = "${module.rg.resource_group_name}"
     vnet_cidr               = ["${var.vnet_cidr}"]
+    dns_servers             = "${var.dns_servers}"
 }
 ```
 
@@ -45,15 +46,16 @@ module "azure-virtual-network" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| client_name | Client name/account used in naming | string | - | yes |
-| custom_vnet_name | Optional custom virtual network name | string | `` | no |
-| environment | Project environment | string | - | yes |
-| extra_tags | Extra tags to add | map | `<map>` | no |
-| location | Azure region to use | string | - | yes |
-| location-short | Short string for Azure location. | string | - | yes |
-| resource_group_name | Resource group name | string | - | yes |
-| stack | Project stack name | string | - | yes |
-| vnet_cidr | The address space that is used by the virtual network | list | - | yes |
+| client\_name | Client name/account used in naming | string | n/a | yes |
+| custom\_vnet\_name | Optional custom virtual network name | string | `""` | no |
+| dns\_servers | List of IP addresses of DNS servers | list | `<list>` | no |
+| environment | Project environment | string | n/a | yes |
+| extra\_tags | Extra tags to add | map | `<map>` | no |
+| location | Azure region to use | string | n/a | yes |
+| location-short | Short string for Azure location. | string | n/a | yes |
+| resource\_group\_name | Resource group name | string | n/a | yes |
+| stack | Project stack name | string | n/a | yes |
+| vnet\_cidr | The address space that is used by the virtual network | list | n/a | yes |
 
 ## Outputs
 
@@ -62,3 +64,4 @@ module "azure-virtual-network" {
 | virtual_network_id | Virtual network generated id |
 | virtual_network_location | Virtual network location |
 | virtual_network_name | Virtual network name |
+| virtual\_network\_space | Virtual network space |
