@@ -37,8 +37,8 @@ module "azure-virtual-network" {
     custom_vnet_name    = "${var.custom_vnet_name}"
 
     resource_group_name     = "${module.rg.resource_group_name}"
-    vnet_cidr               = ["${var.vnet_cidr}"]
-    dns_servers             = "${var.dns_servers}"
+    vnet_cidr               = ["10.10.20.0/16"]
+    dns_servers             = ["10.0.0.4", "10.0.0.5"] # Can be empty if not used
 }
 ```
 
@@ -65,3 +65,8 @@ module "azure-virtual-network" {
 | virtual_network_location | Virtual network location |
 | virtual_network_name | Virtual network name |
 | virtual\_network\_space | Virtual network space |
+
+## Related documentation
+Terraform resource documentation: [https://www.terraform.io/docs/providers/azurerm/r/virtual_network.html]
+
+Microsoft Azure documentation: [https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview]
