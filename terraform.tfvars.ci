@@ -1,0 +1,10 @@
+location="fr-central"
+location-short="frc"
+client_name="test"
+environment="test"
+stack="ci"
+resource_group_name="rg-test"
+vnet_cidr=["10.0.0.0/16"]
+extra_tags = {
+  foo = "bar"
+}
