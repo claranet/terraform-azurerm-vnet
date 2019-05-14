@@ -1,4 +1,4 @@
-# Unreleased
+# v0.2.0 - 2019-05-14
 
 Changed
   * AZ-88 Normalize `location_short` variable
