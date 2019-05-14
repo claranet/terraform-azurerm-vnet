@@ -1,5 +1,9 @@
-# 0.1.0 (01/04/2019)
+# Unreleased
 
-NOTES:
+Changed
+  * AZ-88 Normalize `location_short` variable
 
-  * AZ-5/26: First Release. Azure Vnet
+# v0.1.0 - 2019-04-01
+
+Added
+  * AZ-26: First Release. Azure Vnet

@@ -1,5 +1,5 @@
 location="fr-central"
-location-short="frc"
+location_short="frc"
 client_name="test"
 environment="test"
 stack="ci"
