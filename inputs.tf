@@ -3,7 +3,7 @@ variable "location" {
   type        = "string"
 }
 
-variable "location-short" {
+variable "location_short" {
   description = "Short string for Azure location."
   type        = "string"
 }
