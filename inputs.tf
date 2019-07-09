@@ -19,7 +19,6 @@ variable "name_prefix" {
   default     = ""
 }
 
-
 variable "custom_vnet_name" {
   description = "Optional custom virtual network name"
   type        = "string"

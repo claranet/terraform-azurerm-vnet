@@ -53,7 +53,7 @@ module "azure-virtual-network" {
 | extra\_tags | Extra tags to add | map | `<map>` | no |
 | location | Azure region to use | string | n/a | yes |
 | location\_short | Short string for Azure location. | string | n/a | yes |
-| name\_prefix | Optional prefix for vnet names | string | `""` | no |
+| name\_prefix | Optional prefix for vnet name | string | `""` | no |
 | resource\_group\_name | Resource group name | string | n/a | yes |
 | stack | Project stack name | string | n/a | yes |
 | vnet\_cidr | The address space that is used by the virtual network | list | n/a | yes |
