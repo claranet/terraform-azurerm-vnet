@@ -1,58 +1,58 @@
 variable "location" {
   description = "Azure region to use"
-  type        = "string"
+  type        = string
 }
 
 variable "location_short" {
   description = "Short string for Azure location."
-  type        = "string"
+  type        = string
 }
 
 variable "client_name" {
   description = "Client name/account used in naming"
-  type        = "string"
+  type        = string
 }
 
 variable "name_prefix" {
   description = "Optional prefix for vnet names"
-  type        = "string"
+  type        = string
   default     = ""
 }
 
 variable "custom_vnet_name" {
   description = "Optional custom virtual network name"
-  type        = "string"
+  type        = string
   default     = ""
 }
 
 variable "environment" {
   description = "Project environment"
-  type        = "string"
+  type        = string
 }
 
 variable "stack" {
   description = "Project stack name"
-  type        = "string"
+  type        = string
 }
 
 variable "resource_group_name" {
   description = "Resource group name"
-  type        = "string"
+  type        = string
 }
 
 variable "vnet_cidr" {
   description = "The address space that is used by the virtual network"
-  type        = "list"
+  type        = list(string)
 }
 
 variable "dns_servers" {
   description = "List of IP addresses of DNS servers"
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
 variable "extra_tags" {
   description = "Extra tags to add"
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
