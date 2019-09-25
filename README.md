@@ -1,24 +1,36 @@
 # Azure Virtual Network
-[![Changelog](https://img.shields.io/badge/changelog-release-green.svg)](CHANGELOG.md) [![Notice](https://img.shields.io/badge/notice-copyright-yellow.svg)](NOTICE) [![Apache V2 License](http://img.shields.io/badge/license-Apache%20V2-blue.svg)](LICENSE)
+[![Changelog](https://img.shields.io/badge/changelog-release-green.svg)](CHANGELOG.md) [![Notice](https://img.shields.io/badge/notice-copyright-yellow.svg)](NOTICE) [![Apache V2 License](https://img.shields.io/badge/license-Apache%20V2-orange.svg)](LICENSE) [![TF Registry](https://img.shields.io/badge/terraform-registry-blue.svg)](https://registry.terraform.io/modules/claranet/vnet/azurerm/)
 
 Common Azure module to generate an Azure virtual network.
 
 ## Requirements
 
-* [Terraform](https://www.terraform.io/downloads.html) >= 0.12.7
 * [AzureRM Terraform provider](https://www.terraform.io/docs/providers/azurerm/) >= 1.20
 
-## Mandatory Usage
+## Terraform version compatibility
+
+| Module version | Terraform version |
+|----------------|-------------------|
+| >= 2.x.x       | 0.12.x            |
+| <  2.x.x       | 0.11.x            |
+
+## Usage
+
+This module is optimized to work with the [Claranet terraform-wrapper](https://github.com/claranet/terraform-wrapper) tool
+which set some terraform variables in the environment needed by this module.
+More details about variables set by the `terraform-wrapper` available in the [documentation](https://github.com/claranet/terraform-wrapper#environment).
 
 ```hcl
 module "azure-region" {
-  source = "git::ssh://git@git.fr.clara.net/claranet/cloudnative/projects/cloud/azure/terraform/modules/regions.git?ref=vX.X.X"
+  source  = "claranet/regions/azurerm"
+  version = "x.x.x"
 
   azure_region = var.azure_region
 }
 
 module "rg" {
-  source = "git::ssh://git@git.fr.clara.net/claranet/cloudnative/projects/cloud/azure/terraform/modules/rg.git?ref=vX.X.X"
+  source  = "claranet/rg/azurerm"
+  version = "x.x.x"
 
   location    = module.azure-region.location
   client_name = var.client_name
@@ -27,7 +39,8 @@ module "rg" {
 }
 
 module "azure-virtual-network" {
-  source = "git::ssh://git@git.fr.clara.net/claranet/cloudnative/projects/cloud/azure/terraform/modules/vnet.git?ref=xxx"
+  source  = "claranet/vnet/azurerm"
+  version = "x.x.x"
 
   environment    = var.environment
   location       = module.azure-region.location
@@ -70,6 +83,6 @@ module "azure-virtual-network" {
 
 ## Related documentation
 
-Terraform resource documentation: [https://www.terraform.io/docs/providers/azurerm/r/virtual_network.html]
+Terraform resource documentation: [terraform.io/docs/providers/azurerm/r/virtual_network.html](https://www.terraform.io/docs/providers/azurerm/r/virtual_network.html)
 
-Microsoft Azure documentation: [https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview]
+Microsoft Azure documentation: [docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview)
