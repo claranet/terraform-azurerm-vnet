@@ -5,7 +5,7 @@ Common Azure module to generate an Azure virtual network.
 
 ## Requirements
 
-* [AzureRM Terraform provider](https://www.terraform.io/docs/providers/azurerm/) >= 1.20
+* [AzureRM Terraform provider](https://www.terraform.io/docs/providers/azurerm/) >= 1.32
 
 ## Terraform version compatibility
 
