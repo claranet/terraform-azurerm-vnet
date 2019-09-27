@@ -1,4 +1,4 @@
-# v2.0.1 - Unreleased
+# v2.0.1 - 2019-09-27
 
 Added
   * AZ-119: Add CONTRIBUTING.md doc and `terraform-wrapper` usage with the module
