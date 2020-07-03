@@ -1,3 +1,9 @@
+# v3.0.0
+
+Added
+  * AZ-206: Module both compatible with AzureRM provider v1.x and v2.x
+  * AZ-209: Include Gitlab CI template
+
 # v2.0.1 - 2019-09-27
 
 Added

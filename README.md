@@ -3,16 +3,13 @@
 
 Common Azure module to generate an Azure virtual network.
 
-## Requirements
+## Version compatibility
 
-* [AzureRM Terraform provider](https://www.terraform.io/docs/providers/azurerm/) >= 1.32
-
-## Terraform version compatibility
-
-| Module version | Terraform version |
-|----------------|-------------------|
-| >= 2.x.x       | 0.12.x            |
-| <  2.x.x       | 0.11.x            |
+| Module version    | Terraform version | AzureRM version |
+|-------------------|-------------------|-----------------|
+| >= 3.x.x          | 0.12.x            | >= 2.0          |
+| >= 2.x.x, < 3.x.x | 0.12.x            | <  2.0          |
+| <  2.x.x          | 0.11.x            | <  2.0          |
 
 ## Usage
 
@@ -59,18 +56,18 @@ module "azure-virtual-network" {
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| client\_name | Client name/account used in naming | string | n/a | yes |
-| custom\_vnet\_name | Optional custom virtual network name | string | `""` | no |
-| dns\_servers | List of IP addresses of DNS servers | list | `<list>` | no |
-| environment | Project environment | string | n/a | yes |
-| extra\_tags | Extra tags to add | map | `<map>` | no |
-| location | Azure region to use | string | n/a | yes |
-| location\_short | Short string for Azure location. | string | n/a | yes |
-| name\_prefix | Optional prefix for vnet name | string | `""` | no |
-| resource\_group\_name | Resource group name | string | n/a | yes |
-| stack | Project stack name | string | n/a | yes |
-| vnet\_cidr | The address space that is used by the virtual network | list | n/a | yes |
+|------|-------------|------|---------|:--------:|
+| client\_name | Client name/account used in naming | `string` | n/a | yes |
+| custom\_vnet\_name | Optional custom virtual network name | `string` | `""` | no |
+| dns\_servers | List of IP addresses of DNS servers | `list(string)` | `[]` | no |
+| environment | Project environment | `string` | n/a | yes |
+| extra\_tags | Extra tags to add | `map(string)` | `{}` | no |
+| location | Azure region to use | `string` | n/a | yes |
+| location\_short | Short string for Azure location. | `string` | n/a | yes |
+| name\_prefix | Optional prefix for vnet names | `string` | `""` | no |
+| resource\_group\_name | Resource group name | `string` | n/a | yes |
+| stack | Project stack name | `string` | n/a | yes |
+| vnet\_cidr | The address space that is used by the virtual network | `list(string)` | n/a | yes |
 
 ## Outputs
 
