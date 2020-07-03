@@ -56,7 +56,7 @@ module "azure-virtual-network" {
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | client\_name | Client name/account used in naming | `string` | n/a | yes |
 | custom\_vnet\_name | Optional custom virtual network name | `string` | `""` | no |
 | dns\_servers | List of IP addresses of DNS servers | `list(string)` | `[]` | no |
