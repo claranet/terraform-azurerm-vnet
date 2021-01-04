@@ -1,3 +1,8 @@
+# Unreleased
+
+Changed
+  * AZ-416 : Change VNET name to include Stack name
+
 # v3.1.0/v4.1.0 - 2020-12-15
 
 Changed
