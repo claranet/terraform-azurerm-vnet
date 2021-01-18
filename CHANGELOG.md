@@ -1,4 +1,4 @@
-# Unreleased
+# v3.2.0/v4.2.0 - 2021-01-18
 
 Breaking
   * AZ-416: Change VNET name to include Stack name by default
