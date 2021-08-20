@@ -6,7 +6,8 @@ Common Azure module to generate an Azure virtual network.
 ## Version compatibility
 
 | Module version | Terraform version | AzureRM version |
-|----------------|-------------------| --------------- |
+| -------------- | ----------------- | --------------- |
+| >= 5.x.x       | 0.15.x & 1.0.x    | >= 2.0          |
 | >= 4.x.x       | 0.13.x            | >= 2.0          |
 | >= 3.x.x       | 0.12.x            | >= 2.0          |
 | >= 2.x.x       | 0.12.x            | < 2.0           |
@@ -54,6 +55,23 @@ module "azure-virtual-network" {
 }
 ```
 
+<!-- BEGIN_TF_DOCS -->
+## Providers
+
+| Name | Version |
+|------|---------|
+| azurerm | >= 1.32 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [azurerm_virtual_network.main_vnet](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network) | resource |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -78,9 +96,7 @@ module "azure-virtual-network" {
 | virtual\_network\_location | Virtual network location |
 | virtual\_network\_name | Virtual network name |
 | virtual\_network\_space | Virtual network space |
-
+<!-- END_TF_DOCS -->
 ## Related documentation
-
-Terraform resource documentation: [terraform.io/docs/providers/azurerm/r/virtual_network.html](https://www.terraform.io/docs/providers/azurerm/r/virtual_network.html)
 
 Microsoft Azure documentation: [docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview)
