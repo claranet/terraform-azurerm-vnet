@@ -3,7 +3,8 @@
 
 Common Azure module to generate an Azure virtual network.
 
-## Version compatibility
+<!-- BEGIN_TF_DOCS -->
+## Global versioning rule for Claranet Azure modules
 
 | Module version | Terraform version | AzureRM version |
 | -------------- | ----------------- | --------------- |
@@ -20,7 +21,7 @@ which set some terraform variables in the environment needed by this module.
 More details about variables set by the `terraform-wrapper` available in the [documentation](https://github.com/claranet/terraform-wrapper#environment).
 
 ```hcl
-module "azure-region" {
+module "azure_region" {
   source  = "claranet/regions/azurerm"
   version = "x.x.x"
 
@@ -31,31 +32,30 @@ module "rg" {
   source  = "claranet/rg/azurerm"
   version = "x.x.x"
 
-  location    = module.azure-region.location
+  location    = module.azure_region.location
   client_name = var.client_name
   environment = var.environment
   stack       = var.stack
 }
 
-module "azure-virtual-network" {
+module "azure_virtual_network" {
   source  = "claranet/vnet/azurerm"
   version = "x.x.x"
 
   environment    = var.environment
-  location       = module.azure-region.location
-  location_short = module.azure-region.location_short
+  location       = module.azure_region.location
+  location_short = module.azure_region.location_short
   client_name    = var.client_name
   stack          = var.stack
 
   resource_group_name = module.rg.resource_group_name
 
-  custom_vnet_name = var.custom_vnet_name
-  vnet_cidr        = ["10.10.0.0/16"]
-  dns_servers      = ["10.0.0.4", "10.0.0.5"] # Can be empty if not used
+  vnet_cidr   = ["10.10.0.0/16"]
+  dns_servers = ["10.0.0.4", "10.0.0.5"] # Can be empty if not used
 }
+
 ```
 
-<!-- BEGIN_TF_DOCS -->
 ## Providers
 
 | Name | Version |
