@@ -13,18 +13,6 @@ variable "client_name" {
   type        = string
 }
 
-variable "name_prefix" {
-  description = "Optional prefix for vnet names"
-  type        = string
-  default     = ""
-}
-
-variable "custom_vnet_name" {
-  description = "Optional custom virtual network name"
-  type        = string
-  default     = ""
-}
-
 variable "environment" {
   description = "Project environment"
   type        = string
