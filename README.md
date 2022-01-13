@@ -60,6 +60,7 @@ module "azure_virtual_network" {
 
 | Name | Version |
 |------|---------|
+| azurecaf | ~> 1.1 |
 | azurerm | >= 1.32 |
 
 ## Modules
@@ -70,6 +71,7 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [azurecaf_name.vnet](https://registry.terraform.io/providers/aztfmod/azurecaf/latest/docs/resources/name) | resource |
 | [azurerm_virtual_network.main_vnet](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network) | resource |
 
 ## Inputs
@@ -83,9 +85,11 @@ No modules.
 | extra\_tags | Extra tags to add | `map(string)` | `{}` | no |
 | location | Azure region to use | `string` | n/a | yes |
 | location\_short | Short string for Azure location. | `string` | n/a | yes |
-| name\_prefix | Optional prefix for vnet names | `string` | `""` | no |
+| name\_prefix | Optional prefix for the generated name | `string` | `""` | no |
+| name\_suffix | Optional suffix for the generated name | `string` | `""` | no |
 | resource\_group\_name | Resource group name | `string` | n/a | yes |
 | stack | Project stack name | `string` | n/a | yes |
+| use\_caf\_naming | Use the Azure CAF naming provider to generate default resource name. `custom_vnet_name` override this if set. Legacy default name is used if this is set to `false`. | `bool` | `true` | no |
 | vnet\_cidr | The address space that is used by the virtual network | `list(string)` | n/a | yes |
 
 ## Outputs
