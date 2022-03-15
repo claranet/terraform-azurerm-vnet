@@ -38,9 +38,3 @@ variable "dns_servers" {
   type        = list(string)
   default     = []
 }
-
-variable "extra_tags" {
-  description = "Extra tags to add"
-  type        = map(string)
-  default     = {}
-}
