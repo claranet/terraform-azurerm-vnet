@@ -8,8 +8,9 @@ Common Azure module to generate an Azure virtual network.
 
 | Module version | Terraform version | AzureRM version |
 | -------------- | ----------------- | --------------- |
-| >= 5.x.x       | 0.15.x & 1.0.x    | >= 2.0          |
-| >= 4.x.x       | 0.13.x            | >= 2.0          |
+| >= 6.x.x       | 1.x               | >= 3.0          |
+| >= 5.x.x       | 0.15.x            | >= 2.0          |
+| >= 4.x.x       | 0.13.x / 0.14.x   | >= 2.0          |
 | >= 3.x.x       | 0.12.x            | >= 2.0          |
 | >= 2.x.x       | 0.12.x            | < 2.0           |
 | <  2.x.x       | 0.11.x            | < 2.0           |
@@ -53,7 +54,6 @@ module "azure_virtual_network" {
   vnet_cidr   = ["10.10.0.0/16"]
   dns_servers = ["10.0.0.4", "10.0.0.5"] # Can be empty if not used
 }
-
 ```
 
 ## Providers
