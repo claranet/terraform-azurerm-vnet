@@ -1,4 +1,4 @@
-resource "azurecaf_name" "vnet" {
+data "azurecaf_name" "vnet" {
   name          = var.stack
   resource_type = "azurerm_virtual_network"
   prefixes      = var.name_prefix == "" ? null : [local.name_prefix]
