@@ -1,4 +1,4 @@
-# v5.2.0 - 2022-11-24
+# v5.2.0/v6.0.0 - 2022-11-24
 
 Changed
   * AZ-908: Use the new data source for CAF naming (instead of resource)
