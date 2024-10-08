@@ -1,7 +1,7 @@
-resource "azurerm_virtual_network" "main_vnet" {
+resource "azurerm_virtual_network" "main" {
   name                = local.vnet_name
   resource_group_name = var.resource_group_name
-  address_space       = var.vnet_cidr
+  address_space       = var.cidrs
   location            = var.location
 
   dns_servers = var.dns_servers
@@ -9,3 +9,7 @@ resource "azurerm_virtual_network" "main_vnet" {
   tags = merge(local.default_tags, var.extra_tags)
 }
 
+moved {
+  from = azurerm_virtual_network.main_vnet
+  to   = azurerm_virtual_network.main
+}
