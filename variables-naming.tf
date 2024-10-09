@@ -12,7 +12,7 @@ variable "name_suffix" {
 }
 
 # Custom naming override
-variable "custom_vnet_name" {
+variable "custom_name" {
   description = "Optional custom virtual network name."
   type        = string
   default     = ""

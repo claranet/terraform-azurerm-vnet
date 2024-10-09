@@ -1,5 +1,5 @@
 variable "cidrs" {
-  description = "The address space that is used by the virtual network."
+  description = "The address spaces that is used by the virtual network."
   type        = list(string)
 }
 
