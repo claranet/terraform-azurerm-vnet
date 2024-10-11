@@ -1,19 +1,24 @@
-output "virtual_network_id" {
-  description = "Virtual network generated id"
-  value       = azurerm_virtual_network.main_vnet.id
+output "resource" {
+  description = "Virtual network resource object."
+  value       = azurerm_virtual_network.main
 }
 
-output "virtual_network_location" {
-  description = "Virtual network location"
-  value       = azurerm_virtual_network.main_vnet.location
+output "id" {
+  description = "Virtual network ID."
+  value       = azurerm_virtual_network.main.id
 }
 
-output "virtual_network_name" {
-  description = "Virtual network name"
-  value       = azurerm_virtual_network.main_vnet.name
+output "location" {
+  description = "Virtual network location."
+  value       = azurerm_virtual_network.main.location
 }
 
-output "virtual_network_space" {
-  description = "Virtual network space"
-  value       = azurerm_virtual_network.main_vnet.address_space
+output "name" {
+  description = "Virtual network name."
+  value       = azurerm_virtual_network.main.name
+}
+
+output "address_space" {
+  description = "Virtual network address space."
+  value       = azurerm_virtual_network.main.address_space
 }

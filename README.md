@@ -34,23 +34,6 @@ More details about variables set by the `terraform-wrapper` available in the [do
 [Hashicorp Terraform](https://github.com/hashicorp/terraform/). Instead, we recommend to use [OpenTofu](https://github.com/opentofu/opentofu/).
 
 ```hcl
-module "azure_region" {
-  source  = "claranet/regions/azurerm"
-  version = "x.x.x"
-
-  azure_region = var.azure_region
-}
-
-module "rg" {
-  source  = "claranet/rg/azurerm"
-  version = "x.x.x"
-
-  location    = module.azure_region.location
-  client_name = var.client_name
-  environment = var.environment
-  stack       = var.stack
-}
-
 module "azure_virtual_network" {
   source  = "claranet/vnet/azurerm"
   version = "x.x.x"
@@ -61,9 +44,9 @@ module "azure_virtual_network" {
   client_name    = var.client_name
   stack          = var.stack
 
-  resource_group_name = module.rg.resource_group_name
+  resource_group_name = module.rg.name
 
-  vnet_cidr   = ["10.10.0.0/16"]
+  cidrs       = ["10.10.0.0/16"]
   dns_servers = ["10.0.0.4", "10.0.0.5"] # Can be empty if not used
 }
 ```
@@ -72,8 +55,8 @@ module "azure_virtual_network" {
 
 | Name | Version |
 |------|---------|
-| azurecaf | ~> 1.2, >= 1.2.22 |
-| azurerm | ~> 3.0 |
+| azurecaf | ~> 1.2.28 |
+| azurerm | ~> 4.0 |
 
 ## Modules
 
@@ -83,36 +66,36 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [azurerm_virtual_network.main_vnet](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network) | resource |
+| [azurerm_virtual_network.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network) | resource |
 | [azurecaf_name.vnet](https://registry.terraform.io/providers/claranet/azurecaf/latest/docs/data-sources/name) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| client\_name | Client name/account used in naming | `string` | n/a | yes |
-| custom\_vnet\_name | Optional custom virtual network name | `string` | `""` | no |
-| default\_tags\_enabled | Option to enable or disable default tags | `bool` | `true` | no |
-| dns\_servers | List of IP addresses of DNS servers | `list(string)` | `[]` | no |
-| environment | Project environment | `string` | n/a | yes |
-| extra\_tags | Extra tags to add | `map(string)` | `{}` | no |
-| location | Azure region to use | `string` | n/a | yes |
+| cidrs | The address spaces that is used by the virtual network. | `list(string)` | n/a | yes |
+| client\_name | Client name/account used in naming. | `string` | n/a | yes |
+| custom\_name | Optional custom virtual network name. | `string` | `""` | no |
+| default\_tags\_enabled | Option to enable or disable default tags. | `bool` | `true` | no |
+| dns\_servers | List of IP addresses of DNS servers. | `list(string)` | `[]` | no |
+| environment | Project environment. | `string` | n/a | yes |
+| extra\_tags | Extra tags to add. | `map(string)` | `{}` | no |
+| location | Azure region to use. | `string` | n/a | yes |
 | location\_short | Short string for Azure location. | `string` | n/a | yes |
-| name\_prefix | Optional prefix for the generated name | `string` | `""` | no |
-| name\_suffix | Optional suffix for the generated name | `string` | `""` | no |
-| resource\_group\_name | Resource group name | `string` | n/a | yes |
-| stack | Project stack name | `string` | n/a | yes |
-| use\_caf\_naming | Use the Azure CAF naming provider to generate default resource name. `custom_vnet_name` override this if set. Legacy default name is used if this is set to `false`. | `bool` | `true` | no |
-| vnet\_cidr | The address space that is used by the virtual network | `list(string)` | n/a | yes |
+| name\_prefix | Optional prefix for the generated name. | `string` | `""` | no |
+| name\_suffix | Optional suffix for the generated name. | `string` | `""` | no |
+| resource\_group\_name | Resource group name. | `string` | n/a | yes |
+| stack | Project stack name. | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| virtual\_network\_id | Virtual network generated id |
-| virtual\_network\_location | Virtual network location |
-| virtual\_network\_name | Virtual network name |
-| virtual\_network\_space | Virtual network space |
+| address\_space | Virtual network address space. |
+| id | Virtual network ID. |
+| location | Virtual network location. |
+| name | Virtual network name. |
+| resource | Virtual network resource object. |
 <!-- END_TF_DOCS -->
 ## Related documentation
 
