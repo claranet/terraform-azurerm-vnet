@@ -1,3 +1,8 @@
+data "azurerm_network_watcher" "network_watcher" {
+  name                = "NetworkWatcher_${module.azure_region.location_cli}"
+  resource_group_name = "NetworkWatcherRG"
+}
+
 module "azure_virtual_network" {
   source  = "claranet/vnet/azurerm"
   version = "x.x.x"
