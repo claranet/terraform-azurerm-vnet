@@ -17,3 +17,9 @@ variable "custom_name" {
   type        = string
   default     = ""
 }
+
+variable "custom_network_watcher_flow_log_name" {
+  description = "Network watcher flow log name."
+  type        = string
+  default     = null
+}
