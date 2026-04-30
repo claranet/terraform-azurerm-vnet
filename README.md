@@ -80,7 +80,7 @@ module "azure_virtual_network" {
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | azurecaf | >= 1.2.28 |
 | azurerm | ~> 4.31 |
 
@@ -91,7 +91,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [azurerm_network_watcher_flow_log.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_watcher_flow_log) | resource |
 | [azurerm_virtual_network.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network) | resource |
 | [azurecaf_name.nwflog](https://registry.terraform.io/providers/claranet/azurecaf/latest/docs/data-sources/name) | data source |
@@ -101,7 +101,7 @@ No modules.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | cidrs | The address spaces that is used by the virtual network. | `list(string)` | n/a | yes |
 | client\_name | Client name/account used in naming. | `string` | n/a | yes |
 | custom\_name | Optional custom virtual network name. | `string` | `""` | no |
@@ -134,7 +134,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | address\_space | Virtual network address space. |
 | id | Virtual network ID. |
 | location | Virtual network location. |
