@@ -1,6 +1,7 @@
 output "resource" {
   description = "Virtual network resource object."
   value       = azurerm_virtual_network.main
+  sensitive   = true
 }
 
 output "id" {
@@ -32,3 +33,4 @@ output "network_watcher_flow_log_resource" {
   description = "Network watcher flow log resource object."
   value       = one(azurerm_network_watcher_flow_log.main[*])
 }
+
